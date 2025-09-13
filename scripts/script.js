@@ -139,6 +139,7 @@ async function waitForReadyVideo(video) {
 
 // Устанавливает прелоадер на время загрузки данных ✅
 function showPreloader(tmp, parent) {
+  cardsContainer.classList.add('scrollbar');
   const node = tmp.content.cloneNode(true);
   parent.append(node);
   console.log('показал прелоадер');
@@ -146,6 +147,7 @@ function showPreloader(tmp, parent) {
 
 // Убирает прелоадер из DOM ✅
 function removePreloader(parent, preloaderSelector) {
+  cardsContainer.classList.remove('scrollbar');
   const preloader = parent.querySelector(preloaderSelector);
   if (preloader) {
     preloader.remove();
